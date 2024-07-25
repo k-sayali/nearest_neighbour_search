@@ -22,10 +22,10 @@ public:
 
     // Getter method: Returns the dimension of the vectors in the dataset
     int getDimention();
-
     // Getter method: Returns the entire dataset as a vector of DataVector objects
-    vector<DataVector> getDataset();
-
+    vector<DataVector>& getDataset();
+    // make copy assignment operator
+    VectorDataset& operator=(const VectorDataset& other);
     // Getter method: Returns the DataVector at the specified index in the dataset
     DataVector getDatavector(int index);
 
@@ -39,4 +39,4 @@ public:
     void printDataset();
 };
 
-#endif // VECT
+#endif // VECTORDATASET_H

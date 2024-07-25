@@ -43,6 +43,20 @@ vector<double> DataVector::getVector() const
     return v;
 }
 
+// Compare operator
+bool DataVector::operator==(const DataVector &other)
+{
+    if(v.size()!=other.v.size()){
+        return false;
+    }
+    for (int i = 0; i < v.size(); i++)
+    {
+        if (v[i] != other.v[i])
+            return false;
+    }
+    return true;
+}
+
 // Copy assignment operator: Assigns the content of another DataVector to this DataVector
 DataVector &DataVector::operator=(const DataVector &other)
 {

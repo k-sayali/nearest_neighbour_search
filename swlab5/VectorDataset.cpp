@@ -17,6 +17,16 @@ VectorDataset::~VectorDataset()
     dataset.clear();
 }
 
+// write copy assignment operator
+VectorDataset& VectorDataset::operator=(const VectorDataset& other)
+{
+    if (this != &other)
+    {
+        dataset = other.dataset;
+    }
+    return *this;
+}
+
 // Getter method: Returns the dimension of the vectors in the dataset
 int VectorDataset::getDimention()
 {
@@ -24,7 +34,7 @@ int VectorDataset::getDimention()
 }
 
 // Getter method: Returns the entire dataset as a vector of DataVector objects
-vector<DataVector> VectorDataset::getDataset()
+vector<DataVector>& VectorDataset::getDataset()
 {
     return dataset;
 }
@@ -34,6 +44,7 @@ DataVector VectorDataset::getDatavector(int index)
 {
     return dataset[index];
 }
+
 
 // Reads the dataset from a file with the specified file name
 void VectorDataset::ReadDataset(string fname)
@@ -55,7 +66,7 @@ void VectorDataset::ReadDataset(string fname)
             // Parse the comma-separated values in each line and convert them to doubles
             while (getline(ss, value, ','))
             {
-                vectorData.push_back(stod(value));
+                vectorData.push_back(static_cast<double>(stod(value)/256.0));
             }
 
             // Assign the vector data to the DataVector at the current index

@@ -2,7 +2,9 @@
 
 #include "TreeIndex.h"
 #include <bits/stdc++.h>
+#include <random>
 
+using namespace std;
 // TreeNode constructor
 TreeNode::TreeNode()
 {

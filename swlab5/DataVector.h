@@ -21,7 +21,9 @@ public:
 
     // Copy constructor: Creates a new DataVector object as a copy of another DataVector
     DataVector(const DataVector &other);
-
+    // Compare operator
+    bool operator==(const DataVector &other);
+    
     // Copy assignment operator: Assigns the content of another DataVector to this DataVector
     DataVector &operator=(const DataVector &other);
 
