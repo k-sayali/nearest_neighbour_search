@@ -6,7 +6,7 @@ VectorDataset TreeIndex::Space = VectorDataset(0);
 int main()
 {
 
-    string filename = "fmnist-train.csv";
+    string filename = "fmnist-test.csv";
     // cout << "Enter the dataset file name: ";
     // cin >> filename;
 
